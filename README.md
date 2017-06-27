@@ -11,4 +11,6 @@ git pull https://github.com/csc-training/summerschool.git
 
 ---
 ## Notes
+
+Hi! Have a nice School!
 - [x] Have fun!
