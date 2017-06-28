@@ -11,13 +11,13 @@ program loops
   do i = 0, (nx+1)
      do j = 0, (ny+1)
         if (i==0) then
-          arr(i,j) = bound1
+          arr(i,j) = bound1    ! upper boundary
         else if (j==ny+1) then
-           arr(i,j) = bound2
+           arr(i,j) = bound2   !right boundary
         else if (j==0) then
-           arr(i,j) = bound3
+           arr(i,j) = bound3   !left boundary
         else if (i==nx+1) then
-           arr(i,j) = bound4
+           arr(i,j) = bound4   !bottom boundary
         else 
            arr(i,j) = inner_val
         end if
