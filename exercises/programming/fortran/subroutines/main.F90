@@ -7,18 +7,18 @@ program subroutines
   write (*,*) 'Give number of rows and columns for matrix A:'
   read (*,*) nx, ny
 
-  allocate(previous(nx,ny), current(nx,ny))
+  allocate(prev(nx,ny), curr(nx,ny))
 
   ! initialize the array
-  call initialize(previous)
+  call initialize(prev)
 
-  call write_field(previous)
+  call write_field(prev)
 
   ! compute the Laplacian
-  call laplacian(current, previous)
+  call laplacian(curr, prev)
 
   ! print the result array
-  call write_field(current)
+  call write_field(curr)
  
 end program subroutines
 
