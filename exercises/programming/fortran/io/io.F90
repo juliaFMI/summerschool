@@ -17,9 +17,9 @@ contains
     ! allocate matrix called field
     ! read rest of the file into field
     ! close the file
-
-  open(unit=10, file='bottle.dat', status='old', form='formatted', access='direct', action='read')
-  open(unit=11, file='field', status= 'new', form= 'formatted', access= 'stream', action= 'write')
+  filename = 'bottle.txt'
+  open(unit=10, file= filename, status='old', form='formatted', access='direct', action='read')
+!  open(unit=11, file='field', status= 'new', form= 'formatted', access= 'stream', action= 'write')
   read(10, arrsize, fmt= '(2X,I3)') nx
   read(10, arrsize, fmt= '(6X,I3)') ny
   
@@ -27,20 +27,10 @@ contains
   if (alloc_stat /=0) call abort()
 
   do i=1, nx
-     do j=1, ny
-        write(11,*) field(i,j)
-     end do
+     read(10,*) field(i,:)
   end do
   close(10)
-  close(11)
-
-
-
-
-
-
-
-
+ 
   end subroutine read_field
 
   ! Output routine, saves the temperature distribution as a png image
